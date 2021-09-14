@@ -221,9 +221,10 @@ export async function getBranchName(gitRoot: string): Promise<string> {
 
 export function getJiraTicket(branchName: string, config: JPCMConfig): string {
   debug('getJiraTicket');
-
+  console.log(branchName);
   const jiraIdPattern = new RegExp(config.jiraTicketPattern, 'i');
   const matched = jiraIdPattern.exec(branchName);
+  console.log(matched)
   const jiraTicket = matched && matched[0];
 
   if (!jiraTicket) {

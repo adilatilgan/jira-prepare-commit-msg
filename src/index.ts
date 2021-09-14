@@ -11,6 +11,7 @@ import { error, log } from './log';
   try {
     const gitRoot = git.getRoot();
     const branch = await git.getBranchName(gitRoot);
+    console.log(branch);
     const config = await loadConfig();
     const ticket = git.getJiraTicket(branch, config);
 
